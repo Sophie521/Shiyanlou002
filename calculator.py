@@ -80,13 +80,15 @@ class Calculator(object):
 '''
 
     def final_salary(self, num, salary):
-        insurance = self.min_max(salary)
+	insurance = self.min_max(salary)
         tax_payable = self.taxpayable(salary)
         final_salary = salary - insurance - tax_payable
-
-        output = "{},{},{:.2f},{:.2f},{:.2f}".format(num, salary, insurance, tax_payable, final_salary)
+	output = "{},{},{:.2f},{:.2f},{:.2f}".format(num, salary, insurance,\
+tax_payable, final_salary)
         # print(output)
         self.output += output
+
+class Output(object):
 
     output = ''
     userdata = {}
@@ -112,8 +114,10 @@ if __name__ == '__main__':
     user = UserData(userdata)
     user = Calculator(userdata)
     user = UserData(outfile)
-
-
+    
+   # UserData.dumptofile(outfile)
+    out = Output(outfile)
+    Output.dumptofile(outfile)
 
 
 
