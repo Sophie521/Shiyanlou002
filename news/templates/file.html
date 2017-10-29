@@ -4,9 +4,16 @@
 <title>file</title>
   </head>
 <body>
-  <h1>title:{{ file_item['title'] }}</h1>
-  <h1>creat_time:{{ file_item['created_time'] }}</h1>
-  <h1>content:{{ file_item['content']}}</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<h1>title:{{ text.title }}</h1>
+<h1>creat_time:{{ text.created_time }}</h1>
+<h1>content:{{ text.content}}</h1>
+
+{% endblock %}
+  
  </body>
  </html>
 
