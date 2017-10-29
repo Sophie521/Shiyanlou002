@@ -17,7 +17,7 @@ def index():
 def file(filename):
     with open('/home/shiyanlou/news/files/{}.json'.format(filename)) as file:
         text = json.loads(file.read())
-    return render_templates('file.html',text = text)
+    return render_template('file.html',text = text)
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'),404
